@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ellon Musk",
+      "email": "ceo@mcu.com",
+      "phone": "001-123-4567"
+    },
+    {
+      "id": 2,
+      "name": "Scarlett Johansson",
+      "email": "black-widow@gmail.com",
+      "phone": "001-123-4568"
+    },
+    {
+      "name": "Κυριακος Μακρης",
+      "phone": "30-14323-65677",
+      "email": "your@hotmail.com",
+      "id": 3
+    }
+  ]
+}

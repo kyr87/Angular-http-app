@@ -1,0 +1,39 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+      <h3 class="mb-3 text-center">Create Employee</h3>
+
+      <form #myForm="ngForm" >  
+        <div class="form-group">
+           <input type="text" [(ngModel)]="employee.name" name="name" class="form-control" placeholder="Name" #nameField="ngModel" required minlength="3" > 
+        </div>
+
+         <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)" class="alert alert-danger">
+          <div *ngIf="nameField.errors.required">
+            Name is required.
+          </div>
+          <div *ngIf="nameField.errors.minlength">
+            Name must be at least 3 characters long.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employee.email" name="email" class="form-control" placeholder="Email"  ngModel email="true"  #emailField="ngModel" required>
+        </div>
+      <div *ngIf="emailField.invalid && emailField.touched" class="alert alert-danger">
+        <div *ngIf="emailField.errors.email">
+          Insert a valid email.
+        </div>
+        <div *ngIf="emailField.errors.required">
+          Mail is required.
+        </div>
+      </div>
+    
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employee.phone" name="phone" class="form-control" placeholder="Phone"  #phoneField="ngModel">
+        </div>
+    
+        <button class="btn btn-success btn-lg btn-block" type ="submit" (click)="addEmployee()" [disabled]="!myForm.valid">Create Employee</button>
+        <button class="btn btn-warning btn-lg btn-block" (click)="onClear()">Reset</button>
+      </form>   
+    </div>
+  </div>
